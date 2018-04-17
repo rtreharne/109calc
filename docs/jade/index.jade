@@ -3,202 +3,90 @@ html(lang='en')
   head
     meta(http-equiv='content-type', content='text/html; charset=UTF-8')
     meta(charset='utf-8')
-    title Homeless Hackathon Liverpool - A HiPy Hackathon
+    title 109 Test 3 Calculator
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-    meta(name='description', content='A basic template for Bootstrap 3.0')
+    meta(name='description', content='Calculate what you need to get in Test 3')
     link(href='//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css', rel='stylesheet')
-    link(href="css/basic.css", rel="stylesheet")
     link(href="css/style.css", rel="stylesheet")
+
 
     //if lt IE 9
       script(src='//html5shim.googlecode.com/svn/trunk/html5.js')
 
   body
-    // -
-      .navbar.navbar-default.navbar-fixed-top
-        .container
-          .navbar-header
-
-            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-
-              span.icon-bar
-              span.icon-bar
-              span.icon-bar
-            a.navbar-brand(href='#main')
-              font.pink hipy
-              b hackathon
-          .collapse.navbar-collapse
-            ul.nav.navbar-nav.navbar-right
-              li
-                a(href='#why') why
-              li
-                a(href='#how') how
-              li
-                a(href='#what') what
-              li
-                a(href='#where') where
-              li
-                a(href='#register')
-                  font.pink register
-              li
-                a(href='#team') team
-              li
-                a(href='#contact') contact
-
-
-    //
-
-    .container#main.full-height.vertical-center.headline
+    .container#main
       .row
         .col.col-lg-offset-2.col-lg-8
-          .text-left
-            include main.jade
+          h3 LIFE109 - Quantitative Skills - 2017/18
+          h1 What do I need to score in Test 3?
 
-    hr.style-two
+          form(id='target')
+            | Test 1 (Part One): Mark /20
+            br
+            input(type='text', id='t1p1', placeholder='--')
+            br
+            |  Test 1 (Part Two): Mark /40
+            br
+            input(type='text', id='t1p2', placeholder='--')
+            br
+            |  Test 2 (Part One): Mark /20
+            br
+            input(type='text', id='t2p1', placeholder='--')
+            br
+            |  Test 2 (Part Two): Mark /39
+            br
+            input(type='text', id='t2p2', placeholder='--')
+            br
+            input(type='submit', value='Submit')
 
-    .container#support.full-height.vertical-center
-      .row
-        .col.col-lg-12
-          .text-left
-            include support.jade
-    //-
-      hr.style-two
+          br
+
+          table
+            tr#head
+              th Overall Score (%)
+              th Score Required for T3 (%)
+
+            tr
+              td 40 [PASS]
+              td#pass --
+
+            tr
+              td 50
+              td#fifty --
+
+            tr
+              td 60
+              td#sixty --
+
+            tr
+              td 70
+              td#seventy --
+            tr
+              td 80
+              td#eighty --
+
+  script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+  script.
+    $('#target').on('submit', function(event) {
+      event.preventDefault();
+      var t1p1 = $('#t1p1').val();
+      var t1p2 = $('#t1p2').val();
+      var t2p1 = $('#t2p1').val();
+      var t2p2 = $('#t2p2').val();
+
+      a = (((t1p1/20)+(t1p2/40))/2)*0.1;
+      b = (((t2p1/20)+(t2p2/39))/2)*0.15;
 
 
-      .container#why.full-height.vertical-center.parallax.right-bg
-        .row
-          .col.col-lg-offset-1.col-lg-10
-            .text-left
-              include why.jade
-
-      hr.style-two
-
-      .container#how.full-height.vertical-center.parallax.left-bg
-        .row
-          .col.col-lg-offset-1.col-lg-10
-            .text-left
-              include how.jade
-
-      hr.style-two
-
-      .container#what.full-height.vertical-center.parallax.right-bg
-        .row
-          .col.col-lg-offset-1.col-lg-10
-            .text-left
-              include what.jade
-
-      hr.style-two
-
-      .container#where.full-height.vertical-center.parallax.left-bg
-        .row
-          .col.col-lg-offset-1.col-lg-10
-            .text-left
-              include where.jade
-
-      hr.style-two
-
-      .container#register.full-height.vertical-center
-        .row
-          .col.col-lg-offset-2.col-lg-8
-            .text-left
-              include register.jade
-
-      hr.style-two
-
-      .container#team.full-height.vertical-center
-        .row
-          .col.col-lg-offset-1.col-lg-10
-            .text-left
-              include team.jade
-
-    hr.style-two
-
-    .container#contact.full-height.vertical-center
-      .row
-        .col.col-lg-offset-1.col-lg-10
-          .text-left
-            include form.jade
-
-    .container#footer.vertical-center
-      .row
-        .col.col-lg-12
-          .text-center
-            include footer.jade
-
-    a(href='#main')
-      #fixedbtn-up
-        .inner-fixedbtn-up
-          i.fas.fa-arrow-up.fa-2x
-    // -
-      a(href='#register')
-        #fixedbtn-reg
-          .inner-fixedbtn-reg Register
-
-      a(href="https://twitter.com/HomelessHackLiv")
-        #fixedbtn-twitter
-          .i.fab.fa-twitter.fa-2x
-    // -
-      a(href="")
-        #fixedbtn-facebook
-          .i.fab.fa-facebook.fa-2x
-      a(href="")
-        #fixedbtn-instagram
-          .i.fab.fa-github.fa-2x
-
-    .nav-bottom
-      a(href="https://twitter.com/HomelessHackLiv")
-        .nav-box
-          .i.fab.fa-twitter
-      // -
-        .nav-box
-          .i.fab.fa-facebook
-        .nav-box
-          .i.fab.fa-github
-        a(href="#register")
-          .nav-box.register  Register
-        a(href="#main")
-          .nav-box
-            .i.fas.fa-arrow-up
-
-    script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
-    script(type='text/javascript', src='//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js')
-    script(type='text/javascript', src='js/scrolling.js')
-    script(type='text/javascript', src='js/jquery.countdown.js')
-    script(defer='', src='https://use.fontawesome.com/releases/v5.0.8/js/all.js')
-    // JavaScript jQuery code from Bootply.com editor
-    script(type='text/javascript').
-      $(document).ready(function() {
-      });
-    script.
-      var right = $(".right-bg");
-      var left = $(".left-bg");
-      right.css({
-        "background-position": (right.width()*.66) + "px " + "0px"
-      });
-      left.css({
-        "background-position": (-left.width()*.66) + "px " + "0px"
-      });
-    script.
-      $("#sat-btn").click(function(){
-      $("#saturday").show();
-      $("#friday").hide();
-      $("#sunday").hide();
-      });
-      $("#fri-btn").click(function(){
-      $("#friday").show();
-      $("#saturday").hide();
-      $("#sunday").hide();
-      });
-      $("#sun-btn").click(function(){
-      $("#saturday").hide();
-      $("#friday").hide();
-      $("#sunday").show();
-      });
-
-    script(type='text/javascript').
-      $("#getting-started")
-      .countdown("2018/05/01", function(event) {
-      $(this).html(
-      event.strftime('<div class="time-box"><p>%D<br>days</p></div><div class="time-box"><p>%H<br>hrs</p></div><div class="time-box"><p>%M<br>min</p></div><div class="time-box"><p>%S<br>sec</p></div>')
-      );
-      });
+      // Calculate boundaries
+      pass = (0.2-(a+b))*400;
+      fifty = (0.25-(a+b))*400;
+      sixty = (0.3-(a+b))*400;
+      seventy = (0.35-(a+b))*400;
+      eighty = (0.4-(a+b))*400;
+      $('#pass').html(pass.toFixed(0));
+      $('#fifty').html(fifty.toFixed(0));
+      $('#sixty').html(sixty.toFixed(0));
+      $('#seventy').html(seventy.toFixed(0));
+      $('#eighty').html(eighty.toFixed(0));
+    });

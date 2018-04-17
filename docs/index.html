@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>109 Test 3 Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Calculate what you need to get in Test 3">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!--if lt IE 9
+    script(src='//html5shim.googlecode.com/svn/trunk/html5.js')
+    
+    -->
+  </head>
+  <body>
+    <div id="main" class="container">
+      <div class="row">
+        <div class="col col-lg-offset-2 col-lg-8">
+          <h3>LIFE109 - Quantitative Skills - 2017/18</h3>
+          <h1>What do I need to score in Test 3?</h1>
+          <form id="target">Test 1 (Part One): Mark /20<br>
+            <input type="text" id="t1p1" placeholder="--"><br> Test 1 (Part Two): Mark /40<br>
+            <input type="text" id="t1p2" placeholder="--"><br> Test 2 (Part One): Mark /20<br>
+            <input type="text" id="t2p1" placeholder="--"><br> Test 2 (Part Two): Mark /39<br>
+            <input type="text" id="t2p2" placeholder="--"><br>
+            <input type="submit" value="Submit">
+          </form><br>
+          <table>
+            <tr id="head">
+              <th>Overall Score (%)</th>
+              <th>Score Required for T3 (%)</th>
+            </tr>
+            <tr>
+              <td>40 [PASS]</td>
+              <td id="pass">--</td>
+            </tr>
+            <tr>
+              <td>50</td>
+              <td id="fifty">--</td>
+            </tr>
+            <tr>
+              <td>60</td>
+              <td id="sixty">--</td>
+            </tr>
+            <tr>
+              <td>70</td>
+              <td id="seventy">--</td>
+            </tr>
+            <tr>
+              <td>80</td>
+              <td id="eighty">--</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+    $('#target').on('submit', function(event) {
+      event.preventDefault();
+      var t1p1 = $('#t1p1').val();
+      var t1p2 = $('#t1p2').val();
+      var t2p1 = $('#t2p1').val();
+      var t2p2 = $('#t2p2').val();
+    
+      a = (((t1p1/20)+(t1p2/40))/2)*0.1;
+      b = (((t2p1/20)+(t2p2/39))/2)*0.15;
+    
+    
+      // Calculate boundaries
+      pass = (0.2-(a+b))*400;
+      fifty = (0.25-(a+b))*400;
+      sixty = (0.3-(a+b))*400;
+      seventy = (0.35-(a+b))*400;
+      eighty = (0.4-(a+b))*400;
+      $('#pass').html(pass.toFixed(0));
+      $('#fifty').html(fifty.toFixed(0));
+      $('#sixty').html(sixty.toFixed(0));
+      $('#seventy').html(seventy.toFixed(0));
+      $('#eighty').html(eighty.toFixed(0));
+    });
+  </script>
+</html>
